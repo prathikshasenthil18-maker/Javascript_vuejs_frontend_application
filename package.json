@@ -1,0 +1,46 @@
+{
+  "name": "javascript-vuejs-frontend-application-node22",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Scenario 1 Monolithic Vue.js Frontend Application \u2014 Customer Version 22 (ES2024 / Node.js 22). Tools: diff-cover, eslint, eslint-plugin-security, eslint-plugin-sonarjs, jscpd, lizard, mocha, npm-audit, npm-ls, nyc, pydriller, stryker-js.",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "mocha",
+    "test:coverage": "nyc --reporter=text --reporter=lcov --reporter=json-summary mocha",
+    "lint": "eslint \"src/**/*.{js,vue}\" \"test/**/*.js\" --ext .js,.vue",
+    "lint:security": "eslint -c .eslintrc.security.cjs \"src/**/*.js\" \"tool-fixtures/**/*.js\"",
+    "lint:sonarjs": "eslint -c .eslintrc.sonarjs.cjs \"src/**/*.js\" \"tool-fixtures/**/*.js\"",
+    "jscpd": "jscpd --config .jscpd.json src tool-fixtures",
+    "stryker": "stryker run stryker.conf.json",
+    "audit": "npm audit --json",
+    "ls": "npm ls --all --json",
+    "lizard": "lizard src tool-fixtures",
+    "pydriller": "python scripts/run_pydriller.py",
+    "diff-cover": "diff-cover coverage/lcov.info --html-report coverage/diff-cover.html",
+    "tools:list": "node -e \"console.log(require('./tool-matrix.json').tools.join('\\n'))\""
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.0.7",
+    "vue-eslint-parser": "^9.4.3",
+    "eslint": "^8.57.1",
+    "eslint-plugin-security": "^3.0.1",
+    "eslint-plugin-sonarjs": "^1.0.4",
+    "eslint-plugin-vue": "^9.32.0",
+    "mocha": "^10.8.2",
+    "chai": "^4.5.0",
+    "nyc": "^17.1.0",
+    "jscpd": "^4.0.5",
+    "@stryker-mutator/core": "^8.7.1",
+    "@stryker-mutator/mocha-runner": "^8.7.1"
+  }
+}

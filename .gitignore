@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+.nyc_output/
+reports/
+*.log
+.DS_Store
+.vite/
+_generate_monolith.py

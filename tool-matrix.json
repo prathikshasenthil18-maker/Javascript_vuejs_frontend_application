@@ -1,0 +1,25 @@
+{
+  "language": "JavaScript",
+  "project_type": "Vue.js Frontend Application",
+  "scenario": "1 - Monolithic",
+  "module": "flat (single module)",
+  "customer_version": "18",
+  "syntax": "ES2022 / Node.js 18",
+  "syntax_notes": "native fetch, Object.hasOwn, .at(), Error.cause, optional chaining, nullish coalescing",
+  "tools": [
+    "diff-cover",
+    "eslint",
+    "eslint-plugin-security",
+    "eslint-plugin-sonarjs",
+    "jscpd",
+    "lizard",
+    "mocha",
+    "npm-audit",
+    "npm-ls",
+    "nyc",
+    "pydriller",
+    "stryker-js"
+  ],
+  "source": "Final_Enterprise_Mapping_Matrix 1.xlsx / JavaScript sheet",
+  "syntax_reference": "Golden_Repo_Lite Javascript_18.0.0 + platform Node syntax notes"
+}

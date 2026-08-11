@@ -20,6 +20,8 @@
     "pydriller",
     "stryker-js"
   ],
+  "tools_folder": "tools/",
+  "tools_index": "tools/index.json",
   "source": "Final_Enterprise_Mapping_Matrix 1.xlsx / JavaScript sheet",
   "syntax_reference": "Golden_Repo_Lite Javascript_24.0.0 + platform Node syntax notes"
 }

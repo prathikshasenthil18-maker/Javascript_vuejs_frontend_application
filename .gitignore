@@ -8,5 +8,5 @@ reports/
 .vite/
 _generate_monolith.py
 _tools_pack.py
-
+_version_js_pack.py
 __pycache__/

@@ -23,7 +23,20 @@
     "lizard": "lizard src tool-fixtures",
     "pydriller": "python scripts/run_pydriller.py",
     "diff-cover": "diff-cover coverage/lcov.info --html-report coverage/diff-cover.html",
-    "tools:list": "node -e \"console.log(require('./tool-matrix.json').tools.join('\\n'))\""
+    "tools:list": "node -e \"console.log(require('./tool-matrix.json').tools.join('\\n'))\"",
+    "tools:all": "npm run lint && npm run lint:security && npm run lint:sonarjs && npm run jscpd && npm test && npm run test:coverage && npm run audit && npm run ls && npm run stryker",
+    "tool:diff-cover": "bash tools/diff-cover/run.sh",
+    "tool:eslint": "bash tools/eslint/run.sh",
+    "tool:eslint-plugin-security": "bash tools/eslint-plugin-security/run.sh",
+    "tool:eslint-plugin-sonarjs": "bash tools/eslint-plugin-sonarjs/run.sh",
+    "tool:jscpd": "bash tools/jscpd/run.sh",
+    "tool:lizard": "bash tools/lizard/run.sh",
+    "tool:mocha": "bash tools/mocha/run.sh",
+    "tool:npm-audit": "bash tools/npm-audit/run.sh",
+    "tool:npm-ls": "bash tools/npm-ls/run.sh",
+    "tool:nyc": "bash tools/nyc/run.sh",
+    "tool:pydriller": "bash tools/pydriller/run.sh",
+    "tool:stryker-js": "bash tools/stryker-js/run.sh"
   },
   "dependencies": {
     "vue": "^3.4.38"

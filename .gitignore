@@ -7,3 +7,4 @@ reports/
 .DS_Store
 .vite/
 _generate_monolith.py
+_tools_pack.py

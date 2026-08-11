@@ -1,8 +1,11 @@
 <script setup>
 import { computed, ref } from "vue";
 import { catalogSummary } from "./services/catalogBrowser.js";
+import { ASSET_MANIFEST } from "./build/assetManifest.js";
+import { ENV_FLAGS } from "./build/envFlags.js";
+import { CUSTOMER_VERSION, sortDesc } from "./version/featuresBrowser.js";
 
-const nodeVersion = 22;
+const nodeVersion = CUSTOMER_VERSION;
 const syntaxLabel = "ES2024 / Node.js 22";
 const items = ref([
   { sku: "vue-kit", active: true, score: 91 },
@@ -11,6 +14,7 @@ const items = ref([
 ]);
 
 const summary = computed(() => catalogSummary(items.value));
+const ranked = computed(() => sortDesc(items.value.map((i) => i.score ?? 0)));
 
 function bumpScores() {
   items.value = items.value.map((item) => ({
@@ -28,9 +32,11 @@ function bumpScores() {
       <strong>{{ nodeVersion }}</strong>
     </p>
     <p>Syntax: {{ syntaxLabel }}</p>
+    <p>Build: {{ ASSET_MANIFEST.appName }}</p>
     <p>Active SKU: {{ summary.activeSku }}</p>
     <p>Top score: {{ summary.topScore }}</p>
-    <p>Last tag: {{ summary.lastTag }}</p>
+    <p>Ranked: {{ ranked.join(", ") }}</p>
+    <p>Flags: toSorted={{ ENV_FLAGS.supportsToSorted }} findLast={{ ENV_FLAGS.supportsFindLast }}</p>
     <button type="button" @click="bumpScores">Increment scores</button>
   </main>
 </template>

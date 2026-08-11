@@ -9,7 +9,10 @@
   },
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/version-check.js",
     "build": "vite build",
+    "build:js": "node scripts/build.js",
+    "version:matrix": "node scripts/print-version-matrix.js",
     "preview": "vite preview",
     "test": "mocha",
     "test:coverage": "nyc --reporter=text --reporter=lcov --reporter=json-summary mocha",
